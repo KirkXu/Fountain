@@ -1,0 +1,3 @@
+[submodule "Fountain/vendor/spdlog"]
+	path = Fountain/vendor/spdlog
+	url = https://github.com/gabime/spdlog
