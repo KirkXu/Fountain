@@ -4,6 +4,9 @@
     <Filter Include="Fountain">
       <UniqueIdentifier>{C936278F-B503-829A-DE1C-7042CA48B728}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fountain\Events">
+      <UniqueIdentifier>{8D46544B-F9D1-C10F-02E3-44046EED1D10}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Fountain.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\Fountain\EntryPoint.h">
       <Filter>Fountain</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fountain\Events\ApplicationEvent.h">
+      <Filter>Fountain\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fountain\Events\Event.h">
+      <Filter>Fountain\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fountain\Events\KeyEvent.h">
+      <Filter>Fountain\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fountain\Events\MouseEvent.h">
+      <Filter>Fountain\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Fountain\Log.h">
       <Filter>Fountain</Filter>
