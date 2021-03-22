@@ -18,6 +18,9 @@ project "Fountain"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "ftpch.h"
+	pchsource "Fountain/src/ftpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
