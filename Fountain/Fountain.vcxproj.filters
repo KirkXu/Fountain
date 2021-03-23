@@ -7,6 +7,12 @@
     <Filter Include="Fountain\Events">
       <UniqueIdentifier>{8D46544B-F9D1-C10F-02E3-44046EED1D10}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Fountain.h" />
@@ -31,21 +37,39 @@
     <ClInclude Include="src\Fountain\Events\MouseEvent.h">
       <Filter>Fountain\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Fountain\Layer.h">
+      <Filter>Fountain</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fountain\LayerStack.h">
+      <Filter>Fountain</Filter>
+    </ClInclude>
     <ClInclude Include="src\Fountain\Log.h">
       <Filter>Fountain</Filter>
     </ClInclude>
+    <ClInclude Include="src\Fountain\Window.h">
+      <Filter>Fountain</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\ftpch.h" />
-    <ClInclude Include="src\Fountain\Window.h" />
-    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Fountain\Application.cpp">
       <Filter>Fountain</Filter>
     </ClCompile>
+    <ClCompile Include="src\Fountain\Layer.cpp">
+      <Filter>Fountain</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Fountain\LayerStack.cpp">
+      <Filter>Fountain</Filter>
+    </ClCompile>
     <ClCompile Include="src\Fountain\Log.cpp">
       <Filter>Fountain</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\ftpch.cpp" />
-    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>

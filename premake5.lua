@@ -64,14 +64,17 @@ project "Fountain"
 
 	filter "configurations:Debug"
 		defines "FT_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "FT_RELEASE"
+		buildoptions "/MD"
 		symbols "On"
 
 	filter "configurations:Dist"
 		defines "FT_DIST"
+		buildoptions "/MD"
 		symbols "On"
 
 project "Sandbox"
@@ -112,14 +115,17 @@ project "Sandbox"
 	
 	filter "configurations:Debug"
 		defines "FT_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "FT_RELEASE"
+		buildoptions "/MD"
 		symbols "On"
 
 	filter "configurations:Dist"
 		defines "FT_DIST"
+		buildoptions "/MD"
 		symbols "On"
 
 
