@@ -35,6 +35,8 @@
       <Filter>Fountain</Filter>
     </ClInclude>
     <ClInclude Include="src\ftpch.h" />
+    <ClInclude Include="src\Fountain\Window.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Fountain\Application.cpp">
@@ -44,5 +46,6 @@
       <Filter>Fountain</Filter>
     </ClCompile>
     <ClCompile Include="src\ftpch.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>

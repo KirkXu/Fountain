@@ -1,3 +1,6 @@
 [submodule "Fountain/vendor/spdlog"]
 	path = Fountain/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule ".\\Fountain\\vendor\\GLFW"]
+	path = .\\Fountain\\vendor\\GLFW
+	url = https://github.com/KirkXu/glfw

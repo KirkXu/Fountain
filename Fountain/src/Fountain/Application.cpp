@@ -4,9 +4,12 @@
 #include "Fountain/Events/ApplicationEvent.h"
 #include "Fountain/Log.h"
 
+#include <GLFW/glfw3.h>
+
 namespace Fountain {
 	Application::Application()
 	{
+		m_Winodw = std::unique_ptr<Window>(Window::Create());
 	}
 
 	Application::~Application()
@@ -15,16 +18,11 @@ namespace Fountain {
 
 	void Application::Run()
 	{
-		WindowResizeEvent e(1280, 720);
-		if (e.IsInCategory(EventCategoryApplication))
+		while (m_Running)
 		{
-			FT_TRACE(e);
+			glClearColor(1, 0, 1, 1);
+			glClear(GL_COLOR_BUFFER_BIT);
+			m_Winodw->OnUpdate();
 		}
-		if (e.IsInCategory(EventCategoryInput))
-		{
-			FT_TRACE(e);
-		}
-
-		while (true);
 	}
 }

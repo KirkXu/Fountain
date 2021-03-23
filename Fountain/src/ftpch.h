@@ -12,6 +12,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "Fountain/Log.h"
 
 #ifdef FT_PLATFORM_WINDOWS
 	#include <Windows.h>
