@@ -13,8 +13,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "Fountain/vendor/GLFW/include"
+IncludeDir["Glad"] = "Fountain/vendor/Glad/include"
 
 include "Fountain/vendor/GLFW"
+include "Fountain/vendor/Glad"
 
 project "Fountain"
 	location "Fountain"
@@ -37,12 +39,15 @@ project "Fountain"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
+
 	}
 
 	links 
 	{ 
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -54,7 +59,8 @@ project "Fountain"
 		defines
 		{
 			"FT_PLATFORM_WINDOWS",
-			"FT_BUILD_DLL"
+			"FT_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
