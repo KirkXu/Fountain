@@ -9,10 +9,15 @@ namespace Fountain {
 
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 
+	Application* Application::s_Instance = nullptr;
+	
 	Application::Application()
 	{
-		m_Winodw = std::unique_ptr<Window>(Window::Create());
-		m_Winodw->SetEventCallback(BIND_EVENT_FN(OnEvent));
+		FT_CORE_ASSERT(!s_Instance, "Application already exists!")
+		s_Instance = this;
+
+		m_Winodow = std::unique_ptr<Window>(Window::Create());
+		m_Winodow->SetEventCallback(BIND_EVENT_FN(OnEvent));
 	}
 
 	Application::~Application()
@@ -22,11 +27,13 @@ namespace Fountain {
 	void Application::PushLayer(Layer* layer)
 	{
 		m_LayerStack.PushLayer(layer);
+		layer->OnAttach();
 	}
 
 	void Application::PushOverlay(Layer* layer)
 	{
 		m_LayerStack.PushOverlay(layer);
+		layer->OnAttach();
 	}
 
 	void Application::OnEvent(Event& e)
@@ -46,13 +53,13 @@ namespace Fountain {
 	{
 		while (m_Running)
 		{
-			glClearColor(1, 0, 1, 1);
+			glClearColor(0.1, 0, 0.5, 0.7);
 			glClear(GL_COLOR_BUFFER_BIT);
 
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
 
-			m_Winodw->OnUpdate();
+			m_Winodow->OnUpdate();
 		}
 	}
 

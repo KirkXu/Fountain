@@ -6,6 +6,8 @@
 #include "Fountain/Layer.h"
 #include "Fountain/Log.h"
 
+#include "Fountain/ImGui/ImGuiLayer.h"
+
 // ---Entry Point-------------------------
 #include "Fountain/EntryPoint.h"
 // ---------------------------------------
