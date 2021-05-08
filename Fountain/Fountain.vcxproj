@@ -142,6 +142,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Fountain\KeyCodes.h" />
     <ClInclude Include="src\Fountain.h" />
     <ClInclude Include="src\Fountain\Application.h" />
     <ClInclude Include="src\Fountain\Core.h" />
@@ -155,6 +156,7 @@
     <ClInclude Include="src\Fountain\Layer.h" />
     <ClInclude Include="src\Fountain\LayerStack.h" />
     <ClInclude Include="src\Fountain\Log.h" />
+    <ClInclude Include="src\Fountain\MouseButtonCodes.h" />
     <ClInclude Include="src\Fountain\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\imgui_impl_opengl3.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />

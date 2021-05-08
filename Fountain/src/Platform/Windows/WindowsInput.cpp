@@ -22,7 +22,7 @@ namespace Fountain {
 		return state == GLFW_PRESS;
 	}
 
-	std::pair<float, float> WindowsInput::GetMousePositionImpl()
+	std::pair<float, float> WindowsInput::GetMousePositionImpl() 
 	{
 		auto window = static_cast<GLFWwindow*>(Application::Get().GetWindow().GetnativeWindow());
 		double xpos, ypos;
