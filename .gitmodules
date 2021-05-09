@@ -7,3 +7,6 @@
 [submodule ".\\Fountain\\vendor\\imgui"]
 	path = .\\Fountain\\vendor\\imgui
 	url = https://github.com/KirkXu/imgui
+[submodule ".\\Fountain\\vendor\\glm"]
+	path = .\\Fountain\\vendor\\glm
+	url = https://github.com/g-truc/glm
