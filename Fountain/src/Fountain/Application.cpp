@@ -20,6 +20,9 @@ namespace Fountain {
 
 		m_Winodow = std::unique_ptr<Window>(Window::Create());
 		m_Winodow->SetEventCallback(BIND_EVENT_FN(OnEvent));
+
+		m_ImGuiLayer = new ImGuiLayer();
+		PushOverlay(m_ImGuiLayer);
 	}
 
 	Application::~Application()
@@ -55,11 +58,16 @@ namespace Fountain {
 	{
 		while (m_Running)
 		{
-			glClearColor(0.1, 0, 0.5, 0.7);
+			glClearColor(0.1f, 0.0f, 0.5f, 0.7f);
 			glClear(GL_COLOR_BUFFER_BIT);
 
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
+
+			m_ImGuiLayer->Begin();
+			for (Layer* layer : m_LayerStack)
+				layer->OnImGuiRender();
+			m_ImGuiLayer->End();
 		
 			m_Winodow->OnUpdate();
 		}

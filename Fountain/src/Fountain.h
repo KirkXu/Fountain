@@ -5,7 +5,6 @@
 #include "Fountain/Application.h"
 #include "Fountain/Layer.h"
 #include "Fountain/Log.h"
-#include "Fountain/Events/KeyEvent.h"
 
 #include "Fountain/Input.h"
 #include "Fountain/KeyCodes.h"

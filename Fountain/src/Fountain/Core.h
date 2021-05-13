@@ -1,14 +1,17 @@
 #pragma once
 
 #ifdef FT_PLATFORM_WINDOWS
-
+#if HZ_DYNAMIC_LINK
 	#ifdef FT_BUILD_DLL
 		#define FOUNTAIN_API __declspec(dllexport)
 	#else
 		#define FOUNTAIN_API __declspec(dllimport)
 	#endif
 #else
-	#error FOUNTAIN only supports Windows!
+	#define FOUNTAIN_API
+#endif
+#else
+	#error Fountain  only supports Windows!
 #endif
 
 #ifdef FT_DEBUG

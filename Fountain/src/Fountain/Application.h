@@ -7,6 +7,8 @@
 #include "Fountain/Events/Event.h"
 #include "Fountain/Events/ApplicationEvent.h"
 
+#include "Fountain/ImGui/ImGuiLayer.h"
+
 namespace Fountain {
 
 	class FOUNTAIN_API Application
@@ -28,6 +30,7 @@ namespace Fountain {
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 
+		ImGuiLayer* m_ImGuiLayer;
 		std::unique_ptr<Window> m_Winodow;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
