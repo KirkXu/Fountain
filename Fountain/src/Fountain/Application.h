@@ -9,6 +9,8 @@
 
 #include "Fountain/ImGui/ImGuiLayer.h"
 
+#include "Fountain/Renderer/Shader.h"
+
 namespace Fountain {
 
 	class FOUNTAIN_API Application
@@ -36,6 +38,7 @@ namespace Fountain {
 		LayerStack m_LayerStack;
 
 		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+		std::unique_ptr<Shader> m_Shader;
 	private:
 		static Application* s_Instance;
 	};

@@ -149,6 +149,7 @@
     <ClInclude Include="src\Fountain\Log.h" />
     <ClInclude Include="src\Fountain\MouseButtonCodes.h" />
     <ClInclude Include="src\Fountain\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Fountain\Renderer\Shader.h" />
     <ClInclude Include="src\Fountain\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
@@ -575,6 +576,7 @@
     <ClCompile Include="src\Fountain\Layer.cpp" />
     <ClCompile Include="src\Fountain\LayerStack.cpp" />
     <ClCompile Include="src\Fountain\Log.cpp" />
+    <ClCompile Include="src\Fountain\Renderer\Shader.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
