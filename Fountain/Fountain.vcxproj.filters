@@ -1341,6 +1341,9 @@
     <ClInclude Include="src\Fountain\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Fountain\Renderer\Shader.h" />
+    <ClInclude Include="src\Fountain\Renderer\Buffer.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
+    <ClInclude Include="src\Fountain\Renderer\Renderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Fountain\Application.cpp">
@@ -1372,5 +1375,8 @@
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Fountain\Renderer\Shader.cpp" />
+    <ClCompile Include="src\Fountain\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
+    <ClCompile Include="src\Fountain\Renderer\Renderer.cpp" />
   </ItemGroup>
 </Project>
