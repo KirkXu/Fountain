@@ -13,6 +13,8 @@
 #include "Fountain/Renderer/Buffer.h"
 #include "Fountain/Renderer/VertexArray.h"
 
+#include "Fountain/Renderer/OrthographicCamera.h"
+
 namespace Fountain {
 
 	class FOUNTAIN_API Application
@@ -44,6 +46,8 @@ namespace Fountain {
 
 		std::shared_ptr<Shader> m_BlueShader;
 		std::shared_ptr<VertexArray> m_SquareVA;
+
+		OrthographicCamera m_Camera;
 	private:
 		static Application* s_Instance;
 	};
