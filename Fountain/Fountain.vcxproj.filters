@@ -1350,6 +1350,7 @@
     <ClInclude Include="src\Fountain\Renderer\RenderCommand.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
     <ClInclude Include="src\Fountain\Renderer\OrthographicCamera.h" />
+    <ClInclude Include="src\Fountain\Core\Timestep.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Fountain\Application.cpp">

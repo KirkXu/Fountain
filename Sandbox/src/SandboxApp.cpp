@@ -123,22 +123,23 @@ public:
 
 	}
 
-	void OnUpdate() override
+	void OnUpdate(Fountain::Timestep ts) override
 	{
+		FT_INFO("Delta time: {0}s ({1}ms)", ts.GetSeconds(), ts.GetMilliseconds());
 		if (Fountain::Input::IsKeyPressed(FT_KEY_LEFT))
-			m_CameraPosition.x += m_CameraMoveSpeed;
+			m_CameraPosition.x += m_CameraMoveSpeed * ts;
 		else if (Fountain::Input::IsKeyPressed(FT_KEY_RIGHT))
-			m_CameraPosition.x -= m_CameraMoveSpeed;
+			m_CameraPosition.x -= m_CameraMoveSpeed * ts;
 		
 		if (Fountain::Input::IsKeyPressed(FT_KEY_UP))
-			m_CameraPosition.y -= m_CameraMoveSpeed;
+			m_CameraPosition.y -= m_CameraMoveSpeed * ts;
 		else if (Fountain::Input::IsKeyPressed(FT_KEY_DOWN))
-			m_CameraPosition.y += m_CameraMoveSpeed;
+			m_CameraPosition.y += m_CameraMoveSpeed * ts;
 
 		if (Fountain::Input::IsKeyPressed(FT_KEY_A))
-			m_CameraRotation -= m_CameraRotationSpeed;
+			m_CameraRotation -= m_CameraRotationSpeed * ts;
 		if (Fountain::Input::IsKeyPressed(FT_KEY_D))
-			m_CameraRotation += m_CameraRotationSpeed;
+			m_CameraRotation += m_CameraRotationSpeed * ts;
 
 		Fountain::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1.0f });
 		Fountain::RenderCommand::Clear();
@@ -173,10 +174,10 @@ private:
 
 	Fountain::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
-	float m_CameraMoveSpeed = 0.1f; 
+	float m_CameraMoveSpeed = 5.0f; 
 
 	float m_CameraRotation = 0.0f;
-	float m_CameraRotationSpeed = 1.0f;
+	float m_CameraRotationSpeed = 180.0f;
 };
 
 class Sandbox : public Fountain::Application

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Fountain/Core.h"
+#include "Fountain/Core/Timestep.h"
 #include "Fountain/Events/Event.h"
 
 namespace Fountain {
@@ -13,7 +14,7 @@ namespace Fountain {
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Timestep ts) {}
 		virtual void OnImGuiRender() {}
 		virtual void OnEvent(Event& event) {}
 

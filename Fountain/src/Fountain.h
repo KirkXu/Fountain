@@ -6,6 +6,8 @@
 #include "Fountain/Layer.h"
 #include "Fountain/Log.h"
 
+#include "Fountain/Core/Timestep.h"
+
 #include "Fountain/Input.h"
 #include "Fountain/KeyCodes.h"
 #include "Fountain/MouseButtonCodes.h"

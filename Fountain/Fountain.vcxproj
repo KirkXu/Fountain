@@ -136,6 +136,7 @@
     <ClInclude Include="src\Fountain.h" />
     <ClInclude Include="src\Fountain\Application.h" />
     <ClInclude Include="src\Fountain\Core.h" />
+    <ClInclude Include="src\Fountain\Core\Timestep.h" />
     <ClInclude Include="src\Fountain\EntryPoint.h" />
     <ClInclude Include="src\Fountain\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Fountain\Events\Event.h" />
