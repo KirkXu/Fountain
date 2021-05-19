@@ -9,15 +9,9 @@
 
 #include "Fountain/ImGui/ImGuiLayer.h"
 
-#include "Fountain/Renderer/Shader.h"
-#include "Fountain/Renderer/Buffer.h"
-#include "Fountain/Renderer/VertexArray.h"
-
-#include "Fountain/Renderer/OrthographicCamera.h"
-
 namespace Fountain {
 
-	class FOUNTAIN_API Application
+	class Application
 	{
 	public:
 		Application();
@@ -40,14 +34,6 @@ namespace Fountain {
 		std::unique_ptr<Window> m_Winodow;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
-
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexArray> m_VertexArray;
-
-		std::shared_ptr<Shader> m_BlueShader;
-		std::shared_ptr<VertexArray> m_SquareVA;
-
-		OrthographicCamera m_Camera;
 	private:
 		static Application* s_Instance;
 	};

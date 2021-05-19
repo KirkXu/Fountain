@@ -12,6 +12,17 @@
 
 #include "Fountain/ImGui/ImGuiLayer.h"
 
+// ---Renderer---------------------------
+#include "Fountain/Renderer/Renderer.h"
+#include "Fountain/Renderer/RenderCommand.h"
+
+#include "Fountain/Renderer/Buffer.h"
+#include "Fountain/Renderer/Shader.h"
+#include "Fountain/Renderer/VertexArray.h"
+
+#include "Fountain/Renderer/OrthographicCamera.h"
+// ---------------------------------------
+
 // ---Entry Point-------------------------
 #include "Fountain/EntryPoint.h"
 // ---------------------------------------
