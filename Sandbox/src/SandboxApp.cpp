@@ -22,7 +22,7 @@ public:
 		};
 
 
-		std::shared_ptr<Fountain::VertexBuffer> vertexBuffer;
+		Fountain::Ref<Fountain::VertexBuffer> vertexBuffer;
 		vertexBuffer.reset(Fountain::VertexBuffer::Create(vertices, sizeof(vertices)));
 
 
@@ -34,7 +34,7 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		unsigned int indices[3] = { 0, 1, 2 };
-		std::shared_ptr<Fountain::IndexBuffer> indexBuffer;
+		Fountain::Ref<Fountain::IndexBuffer> indexBuffer;
 		indexBuffer.reset(Fountain::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
@@ -47,7 +47,7 @@ public:
 			-0.5f,  0.5f, 0.0f
 		};
 
-		std::shared_ptr<Fountain::VertexBuffer> squareVB;
+		Fountain::Ref<Fountain::VertexBuffer> squareVB;
 		squareVB.reset(Fountain::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 		squareVB->SetLayout({
 			{ Fountain::ShaderDataType::Float3, "a_Position"}
@@ -55,7 +55,7 @@ public:
 		m_SquareVA->AddVertexBuffer(squareVB);
 
 		unsigned int squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		std::shared_ptr<Fountain::IndexBuffer> squareIB;
+		Fountain::Ref<Fountain::IndexBuffer> squareIB;
 		squareIB.reset(Fountain::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
 		m_SquareVA->SetIndexBuffer(squareIB);
 
@@ -191,11 +191,11 @@ public:
 	}
 
 private:
-	std::shared_ptr<Fountain::Shader> m_Shader;
-	std::shared_ptr<Fountain::VertexArray> m_VertexArray;
+	Fountain::Ref<Fountain::Shader> m_Shader;
+	Fountain::Ref<Fountain::VertexArray> m_VertexArray;
 
-	std::shared_ptr<Fountain::Shader> m_FlatColorShader;
-	std::shared_ptr<Fountain::VertexArray> m_SquareVA;
+	Fountain::Ref<Fountain::Shader> m_FlatColorShader;
+	Fountain::Ref<Fountain::VertexArray> m_SquareVA;
 
 	Fountain::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
