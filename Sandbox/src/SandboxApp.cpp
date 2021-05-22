@@ -40,17 +40,18 @@ public:
 
 		m_SquareVA.reset(Fountain::VertexArray::Create());
 
-		float squareVertices[3 * 4] = {
-			-0.5f, -0.5f, 0.0f,
-			 0.5f, -0.5f, 0.0f,
-			 0.5f,  0.5f, 0.0f,
-			-0.5f,  0.5f, 0.0f
+		float squareVertices[5 * 4] = {
+			-0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
+			 0.5f, -0.5f, 0.0f, 1.0f, 0.0f,
+			 0.5f,  0.5f, 0.0f, 1.0f, 1.0f,
+			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f
 		};
 
 		Fountain::Ref<Fountain::VertexBuffer> squareVB;
 		squareVB.reset(Fountain::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 		squareVB->SetLayout({
-			{ Fountain::ShaderDataType::Float3, "a_Position"}
+			{ Fountain::ShaderDataType::Float3, "a_Position"},
+			{ Fountain::ShaderDataType::Float2, "a_TexCoord"}
 			});
 		m_SquareVA->AddVertexBuffer(squareVB);
 
@@ -130,11 +131,50 @@ public:
 
 		m_FlatColorShader.reset(Fountain::Shader::Create(flatColorShaderVertexSrc, flatColorShaderFragmentSrc));
 
+		std::string textureShaderVertexSrc = R"(
+			#version 330 core
+
+			layout(location = 0) in vec3 a_Position;
+			layout(location = 1) in vec2 a_TexCoord;
+
+			uniform mat4 u_ViewProjection;
+			uniform mat4 u_Transform;
+
+			out vec2 v_TexCoord;
+
+			void main()
+			{
+				v_TexCoord = a_TexCoord;
+				gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);
+			}
+		)";
+
+		std::string textureShaderFragmentSrc = R"(
+			#version 330 core
+
+			layout(location = 0) out vec4 color;
+
+			in vec2 v_TexCoord;
+
+			uniform sampler2D u_Texture;
+
+			void main()
+			{
+				color = texture(u_Texture, v_TexCoord);
+			}
+		)";
+
+		m_TextureShader.reset(Fountain::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
+
+		m_Texture = Fountain::Texture2D::Create("assets/textures/Cloud.png");
+
+		std::dynamic_pointer_cast<Fountain::OpenGLShader>(m_TextureShader)->Bind();
+		std::dynamic_pointer_cast<Fountain::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
 	}
 
 	void OnUpdate(Fountain::Timestep ts) override
 	{
-		// FT_INFO("Delta time: {0}s ({1}ms)", ts.GetSeconds(), ts.GetMilliseconds());
+		// FT_INFO("Delta time: {0}s ({1}ms)", ts.GetSeconds(), ts.GetMilliseconds()); 
 		if (Fountain::Input::IsKeyPressed(FT_KEY_LEFT))
 			m_CameraPosition.x += m_CameraMoveSpeed * ts;
 		else if (Fountain::Input::IsKeyPressed(FT_KEY_RIGHT))
@@ -173,7 +213,11 @@ public:
 			}
 		}
 		
-		Fountain::Renderer::Submit(m_Shader, m_VertexArray);
+		m_Texture->Bind();
+		Fountain::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+
+		// Triangle
+		// Fountain::Renderer::Submit(m_Shader, m_VertexArray);
 
 		Fountain::Renderer::EndScene();
 	}
@@ -194,8 +238,10 @@ private:
 	Fountain::Ref<Fountain::Shader> m_Shader;
 	Fountain::Ref<Fountain::VertexArray> m_VertexArray;
 
-	Fountain::Ref<Fountain::Shader> m_FlatColorShader;
+	Fountain::Ref<Fountain::Shader> m_FlatColorShader, m_TextureShader;
 	Fountain::Ref<Fountain::VertexArray> m_SquareVA;
+
+	Fountain::Ref<Fountain::Texture2D> m_Texture;
 
 	Fountain::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
