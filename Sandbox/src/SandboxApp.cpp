@@ -167,6 +167,7 @@ public:
 		m_TextureShader.reset(Fountain::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
 
 		m_Texture = Fountain::Texture2D::Create("assets/textures/Cloud.png");
+		m_JerryLogoTexture = Fountain::Texture2D::Create("assets/textures/JerryLogo.png");
 
 		std::dynamic_pointer_cast<Fountain::OpenGLShader>(m_TextureShader)->Bind();
 		std::dynamic_pointer_cast<Fountain::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
@@ -216,6 +217,9 @@ public:
 		m_Texture->Bind();
 		Fountain::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
+		m_JerryLogoTexture->Bind();
+		Fountain::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+
 		// Triangle
 		// Fountain::Renderer::Submit(m_Shader, m_VertexArray);
 
@@ -241,7 +245,7 @@ private:
 	Fountain::Ref<Fountain::Shader> m_FlatColorShader, m_TextureShader;
 	Fountain::Ref<Fountain::VertexArray> m_SquareVA;
 
-	Fountain::Ref<Fountain::Texture2D> m_Texture;
+	Fountain::Ref<Fountain::Texture2D> m_Texture, m_JerryLogoTexture;
 
 	Fountain::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
