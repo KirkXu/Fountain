@@ -24,8 +24,6 @@ public:
 
 		Fountain::Ref<Fountain::VertexBuffer> vertexBuffer;
 		vertexBuffer.reset(Fountain::VertexBuffer::Create(vertices, sizeof(vertices)));
-
-
 		Fountain::BufferLayout layout = {
 			{ Fountain::ShaderDataType::Float3, "a_Position"},
 			{ Fountain::ShaderDataType::Float4, "a_Color"}
@@ -95,7 +93,7 @@ public:
 			}
 		)";
 
-		m_Shader.reset(Fountain::Shader::Create(vertexSrc, fragmentSrc));
+		m_Shader = Fountain::Shader::Create("VertexPosColor", vertexSrc, fragmentSrc);
 
 		std::string flatColorShaderVertexSrc = R"(
 			#version 330 core
@@ -129,15 +127,15 @@ public:
 			}
 		)";
 
-		m_FlatColorShader.reset(Fountain::Shader::Create(flatColorShaderVertexSrc, flatColorShaderFragmentSrc));
+		m_FlatColorShader = Fountain::Shader::Create("flatColor", flatColorShaderVertexSrc, flatColorShaderFragmentSrc);
 
-		m_TextureShader.reset(Fountain::Shader::Create("assets/shaders/Texture.glsl"));
+		auto textureShader = m_ShaderLibrary.Load("assets/shaders/Texture.glsl");
 
 		m_Texture = Fountain::Texture2D::Create("assets/textures/Cloud.png");
 		m_JerryLogoTexture = Fountain::Texture2D::Create("assets/textures/JerryLogo.png");
 
-		std::dynamic_pointer_cast<Fountain::OpenGLShader>(m_TextureShader)->Bind();
-		std::dynamic_pointer_cast<Fountain::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
+		std::dynamic_pointer_cast<Fountain::OpenGLShader>(textureShader)->Bind();
+		std::dynamic_pointer_cast<Fountain::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
 	}
 
 	void OnUpdate(Fountain::Timestep ts) override
@@ -181,11 +179,13 @@ public:
 			}
 		}
 		
+		auto textureShader = m_ShaderLibrary.Get("Texture");
+
 		m_Texture->Bind();
-		Fountain::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		Fountain::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 		m_JerryLogoTexture->Bind();
-		Fountain::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		Fountain::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 		// Triangle
 		// Fountain::Renderer::Submit(m_Shader, m_VertexArray);
@@ -206,10 +206,11 @@ public:
 	}
 
 private:
+	Fountain::ShaderLibrary m_ShaderLibrary;
 	Fountain::Ref<Fountain::Shader> m_Shader;
 	Fountain::Ref<Fountain::VertexArray> m_VertexArray;
 
-	Fountain::Ref<Fountain::Shader> m_FlatColorShader, m_TextureShader;
+	Fountain::Ref<Fountain::Shader> m_FlatColorShader;
 	Fountain::Ref<Fountain::VertexArray> m_SquareVA;
 
 	Fountain::Ref<Fountain::Texture2D> m_Texture, m_JerryLogoTexture;
