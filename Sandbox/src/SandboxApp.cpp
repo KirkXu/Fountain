@@ -31,7 +31,7 @@ public:
 		vertexBuffer->SetLayout(layout);
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
-		unsigned int indices[3] = { 0, 1, 2 };
+		unsigned int indices[3] = { 0, 1, 2 }; 
 		Fountain::Ref<Fountain::IndexBuffer> indexBuffer;
 		indexBuffer.reset(Fountain::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
@@ -188,6 +188,14 @@ public:
 	void OnEvent(Fountain::Event& e) override
 	{
 		m_CameraController.OnEvent(e);
+
+		if (e.GetEventType() == Fountain::EventType::WindowResize)
+		{
+			auto& re = (Fountain::WindowResizeEvent&)e;
+
+			// float zoom = (float)re.GetWidth() / 1280.0f;
+			// m_CameraController.SetZoomLevel(zoom);
+		}
 	}
 
 private:

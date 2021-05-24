@@ -35,6 +35,7 @@ namespace Fountain {
 		}
 		
 		m_Camera.SetPosition(m_CameraPosition);
+
 		m_CameraTranslationSpeed = m_ZoomLevel;
 	}
 
