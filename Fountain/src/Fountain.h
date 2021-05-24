@@ -11,6 +11,7 @@
 #include "Fountain/Input.h"
 #include "Fountain/KeyCodes.h"
 #include "Fountain/MouseButtonCodes.h"
+#include "Fountain/OrthographicCameraController.h"
 
 #include "Fountain/ImGui/ImGuiLayer.h"
 

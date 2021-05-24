@@ -149,6 +149,7 @@
     <ClInclude Include="src\Fountain\LayerStack.h" />
     <ClInclude Include="src\Fountain\Log.h" />
     <ClInclude Include="src\Fountain\MouseButtonCodes.h" />
+    <ClInclude Include="src\Fountain\OrthographicCameraController.h" />
     <ClInclude Include="src\Fountain\Renderer\Buffer.h" />
     <ClInclude Include="src\Fountain\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Fountain\Renderer\OrthographicCamera.h" />
@@ -590,6 +591,7 @@
     <ClCompile Include="src\Fountain\Layer.cpp" />
     <ClCompile Include="src\Fountain\LayerStack.cpp" />
     <ClCompile Include="src\Fountain\Log.cpp" />
+    <ClCompile Include="src\Fountain\OrthographicCameraController.cpp" />
     <ClCompile Include="src\Fountain\Renderer\Buffer.cpp" />
     <ClCompile Include="src\Fountain\Renderer\OrthographicCamera.cpp" />
     <ClCompile Include="src\Fountain\Renderer\RenderCommand.cpp" />

@@ -11,7 +11,7 @@ class ExampleLayer : public Fountain::Layer
 {
 public:
 	ExampleLayer()
-		: Layer("Example"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f), m_CameraPosition(0.0f)
+		: Layer("Example"), m_CameraController(1280.0f / 720.0f)
 	{
 		m_VertexArray.reset(Fountain::VertexArray::Create());
 
@@ -140,29 +140,14 @@ public:
 
 	void OnUpdate(Fountain::Timestep ts) override
 	{
-		// FT_INFO("Delta time: {0}s ({1}ms)", ts.GetSeconds(), ts.GetMilliseconds()); 
-		if (Fountain::Input::IsKeyPressed(FT_KEY_LEFT))
-			m_CameraPosition.x += m_CameraMoveSpeed * ts;
-		else if (Fountain::Input::IsKeyPressed(FT_KEY_RIGHT))
-			m_CameraPosition.x -= m_CameraMoveSpeed * ts;
+		// Update
+		m_CameraController.OnUpdate(ts);
 
-		if (Fountain::Input::IsKeyPressed(FT_KEY_UP))
-			m_CameraPosition.y -= m_CameraMoveSpeed * ts;
-		else if (Fountain::Input::IsKeyPressed(FT_KEY_DOWN))
-			m_CameraPosition.y += m_CameraMoveSpeed * ts;
-
-		if (Fountain::Input::IsKeyPressed(FT_KEY_A))
-			m_CameraRotation -= m_CameraRotationSpeed * ts;
-		if (Fountain::Input::IsKeyPressed(FT_KEY_D))
-			m_CameraRotation += m_CameraRotationSpeed * ts;
-
+		// Render
 		Fountain::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1.0f });
 		Fountain::RenderCommand::Clear();
 
-		m_Camera.SetPosition(m_CameraPosition);
-		m_Camera.SetRotation(m_CameraRotation);
-
-		Fountain::Renderer::BeginScene(m_Camera);
+		Fountain::Renderer::BeginScene(m_CameraController.GetCamera());
 
 		glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
@@ -200,9 +185,9 @@ public:
 		ImGui::End();
 	}
 
-	void OnEvent(Fountain::Event& event) override
+	void OnEvent(Fountain::Event& e) override
 	{
-
+		m_CameraController.OnEvent(e);
 	}
 
 private:
@@ -215,13 +200,7 @@ private:
 
 	Fountain::Ref<Fountain::Texture2D> m_Texture, m_JerryLogoTexture;
 
-	Fountain::OrthographicCamera m_Camera;
-	glm::vec3 m_CameraPosition;
-	float m_CameraMoveSpeed = 5.0f; 
-
-	float m_CameraRotation = 0.0f;
-	float m_CameraRotationSpeed = 180.0f;
-
+	Fountain::OrthographicCameraController m_CameraController;
 	glm::vec3 m_SquareColor = { 0.2f, 0.3f, 0.8f };
 };
 
