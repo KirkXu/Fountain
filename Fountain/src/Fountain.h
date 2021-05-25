@@ -2,16 +2,16 @@
 
 // For use by Fountain applicatiuons
 
-#include "Fountain/Application.h"
-#include "Fountain/Layer.h"
-#include "Fountain/Log.h"
+#include "Fountain/Core/Application.h"
+#include "Fountain/Core/Layer.h"
+#include "Fountain/Core/Log.h"
 
 #include "Fountain/Core/Timestep.h"
 
-#include "Fountain/Input.h"
-#include "Fountain/KeyCodes.h"
-#include "Fountain/MouseButtonCodes.h"
-#include "Fountain/OrthographicCameraController.h"
+#include "Fountain/Core/Input.h"
+#include "Fountain/Core/KeyCodes.h"
+#include "Fountain/Core/MouseButtonCodes.h"
+#include "Fountain/Renderer/OrthographicCameraController.h"
 
 #include "Fountain/ImGui/ImGuiLayer.h"
 
@@ -28,6 +28,6 @@
 // ---------------------------------------
 
 // ---Entry Point-------------------------
-#include "Fountain/EntryPoint.h"
+#include "Fountain/Core/EntryPoint.h"
 // ---------------------------------------
 

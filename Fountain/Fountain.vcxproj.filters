@@ -57,17 +57,38 @@
     <ClInclude Include="src\Fountain.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Fountain\Application.h">
-      <Filter>src\Fountain</Filter>
+    <ClInclude Include="src\Fountain\Core\Application.h">
+      <Filter>src\Fountain\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Fountain\Core.h">
-      <Filter>src\Fountain</Filter>
+    <ClInclude Include="src\Fountain\Core\Core.h">
+      <Filter>src\Fountain\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fountain\Core\EntryPoint.h">
+      <Filter>src\Fountain\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fountain\Core\Input.h">
+      <Filter>src\Fountain\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fountain\Core\KeyCodes.h">
+      <Filter>src\Fountain\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fountain\Core\Layer.h">
+      <Filter>src\Fountain\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fountain\Core\LayerStack.h">
+      <Filter>src\Fountain\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fountain\Core\Log.h">
+      <Filter>src\Fountain\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fountain\Core\MouseButtonCodes.h">
+      <Filter>src\Fountain\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Fountain\Core\Timestep.h">
       <Filter>src\Fountain\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Fountain\EntryPoint.h">
-      <Filter>src\Fountain</Filter>
+    <ClInclude Include="src\Fountain\Core\Window.h">
+      <Filter>src\Fountain\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Fountain\Events\ApplicationEvent.h">
       <Filter>src\Fountain\Events</Filter>
@@ -84,24 +105,6 @@
     <ClInclude Include="src\Fountain\ImGui\ImGuiLayer.h">
       <Filter>src\Fountain\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="src\Fountain\Input.h">
-      <Filter>src\Fountain</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Fountain\KeyCodes.h">
-      <Filter>src\Fountain</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Fountain\Layer.h">
-      <Filter>src\Fountain</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Fountain\LayerStack.h">
-      <Filter>src\Fountain</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Fountain\Log.h">
-      <Filter>src\Fountain</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Fountain\MouseButtonCodes.h">
-      <Filter>src\Fountain</Filter>
-    </ClInclude>
     <ClInclude Include="src\Fountain\Renderer\Buffer.h">
       <Filter>src\Fountain\Renderer</Filter>
     </ClInclude>
@@ -109,6 +112,9 @@
       <Filter>src\Fountain\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Fountain\Renderer\OrthographicCamera.h">
+      <Filter>src\Fountain\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fountain\Renderer\OrthographicCameraController.h">
       <Filter>src\Fountain\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Fountain\Renderer\RenderCommand.h">
@@ -128,9 +134,6 @@
     </ClInclude>
     <ClInclude Include="src\Fountain\Renderer\VertexArray.h">
       <Filter>src\Fountain\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Fountain\Window.h">
-      <Filter>src\Fountain</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
       <Filter>src\Platform\OpenGL</Filter>
@@ -1401,11 +1404,19 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\Fountain\OrthographicCameraController.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Fountain\Application.cpp">
-      <Filter>src\Fountain</Filter>
+    <ClCompile Include="src\Fountain\Core\Application.cpp">
+      <Filter>src\Fountain\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Fountain\Core\Layer.cpp">
+      <Filter>src\Fountain\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Fountain\Core\LayerStack.cpp">
+      <Filter>src\Fountain\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Fountain\Core\Log.cpp">
+      <Filter>src\Fountain\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Fountain\ImGui\ImGuiBuild.cpp">
       <Filter>src\Fountain\ImGui</Filter>
@@ -1413,19 +1424,13 @@
     <ClCompile Include="src\Fountain\ImGui\ImGuiLayer.cpp">
       <Filter>src\Fountain\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="src\Fountain\Layer.cpp">
-      <Filter>src\Fountain</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Fountain\LayerStack.cpp">
-      <Filter>src\Fountain</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Fountain\Log.cpp">
-      <Filter>src\Fountain</Filter>
-    </ClCompile>
     <ClCompile Include="src\Fountain\Renderer\Buffer.cpp">
       <Filter>src\Fountain\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Fountain\Renderer\OrthographicCamera.cpp">
+      <Filter>src\Fountain\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Fountain\Renderer\OrthographicCameraController.cpp">
       <Filter>src\Fountain\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Fountain\Renderer\RenderCommand.cpp">
@@ -1476,6 +1481,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\Fountain\OrthographicCameraController.cpp" />
   </ItemGroup>
 </Project>

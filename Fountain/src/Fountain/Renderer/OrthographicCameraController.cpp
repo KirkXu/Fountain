@@ -1,8 +1,8 @@
 #include "ftpch.h"
 #include "OrthographicCameraController.h"
 
-#include "Fountain/Input.h"
-#include "Fountain/KeyCodes.h"
+#include "Fountain/Core/Input.h"
+#include "Fountain/Core/KeyCodes.h"
 
 namespace Fountain {
 
@@ -48,7 +48,7 @@ namespace Fountain {
 
 	bool OrthographicCameraController::OnMouseScrolled(MouseScrolledEvent& e)
 	{
-		m_ZoomLevel -= e.GetYOffset() * 0.5;
+		m_ZoomLevel -= e.GetYOffset() * 0.5f;
 		m_ZoomLevel = std::max(m_ZoomLevel, 0.25f);
 		m_Camera.SetProjection(-m_AspectRatio * m_ZoomLevel, m_AspectRatio * m_ZoomLevel, -m_ZoomLevel, m_ZoomLevel);
 		return false;

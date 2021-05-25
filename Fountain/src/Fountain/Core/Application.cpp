@@ -1,7 +1,7 @@
 #include "ftpch.h"
 #include "Application.h"
 
-#include "Fountain/Log.h"
+#include "Fountain/Core/Log.h"
 
 #include "Fountain/Renderer/Renderer.h"
 

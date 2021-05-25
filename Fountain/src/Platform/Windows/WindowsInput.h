@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Fountain/Input.h"
+#include "Fountain/Core/Input.h"
 
 namespace Fountain {
 

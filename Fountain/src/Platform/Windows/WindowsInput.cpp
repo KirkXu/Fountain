@@ -1,7 +1,7 @@
 #include "ftpch.h"
 #include "WindowsInput.h"
 
-#include "Fountain/Application.h"
+#include "Fountain/Core/Application.h"
 #include <GLFW/glfw3.h>
 
 namespace Fountain {

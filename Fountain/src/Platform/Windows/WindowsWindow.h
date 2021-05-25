@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Fountain/Window.h"
+#include "Fountain/Core/Window.h"
 #include "Fountain/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>

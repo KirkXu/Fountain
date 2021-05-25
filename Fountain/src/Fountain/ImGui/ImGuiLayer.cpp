@@ -5,7 +5,7 @@
 #include "backends/imgui_impl_opengl3.h"
 #include "backends/imgui_impl_glfw.h"
 
-#include "Fountain/Application.h"
+#include "Fountain/Core/Application.h"
 
 #include <GLFW/glfw3.h>
 #include <glad/glad.h>

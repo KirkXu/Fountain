@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Fountain/Core.h"
+#include "Fountain/Core/Core.h"
 
 namespace Fountain {
 
