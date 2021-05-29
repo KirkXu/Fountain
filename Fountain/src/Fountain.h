@@ -17,6 +17,7 @@
 
 // ---Renderer---------------------------
 #include "Fountain/Renderer/Renderer.h"
+#include "Fountain/Renderer/Renderer2D.h"
 #include "Fountain/Renderer/RenderCommand.h"
 
 #include "Fountain/Renderer/Buffer.h"
