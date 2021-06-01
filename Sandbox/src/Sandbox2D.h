@@ -18,9 +18,11 @@ public:
 private:
 	Fountain::OrthographicCameraController m_CameraController;
 
-	
+	// Temp
 	Fountain::Ref<Fountain::VertexArray> m_SquareVA;
 	Fountain::Ref<Fountain::Shader> m_FlatColorShader;
+
+	Fountain::Ref<Fountain::Texture2D> m_CloudTexture;
 
 	glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
 
