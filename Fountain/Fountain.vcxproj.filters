@@ -1405,6 +1405,7 @@
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
     <ClInclude Include="src\Fountain\Renderer\Renderer2D.h" />
+    <ClInclude Include="src\Fountain\Debug\Instrumentor.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Fountain\Core\Application.cpp">

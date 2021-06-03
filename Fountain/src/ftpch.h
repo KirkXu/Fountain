@@ -15,6 +15,8 @@
 
 #include "Fountain/Core/Log.h"
 
+#include "Fountain/Debug/Instrumentor.h"
+
 #ifdef FT_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif

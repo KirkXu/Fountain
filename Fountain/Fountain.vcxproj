@@ -144,6 +144,7 @@
     <ClInclude Include="src\Fountain\Core\MouseButtonCodes.h" />
     <ClInclude Include="src\Fountain\Core\Timestep.h" />
     <ClInclude Include="src\Fountain\Core\Window.h" />
+    <ClInclude Include="src\Fountain\Debug\Instrumentor.h" />
     <ClInclude Include="src\Fountain\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Fountain\Events\Event.h" />
     <ClInclude Include="src\Fountain\Events\KeyEvent.h" />
