@@ -14,6 +14,8 @@ namespace Fountain {
 
 	void OrthographicCameraController::OnUpdate(Timestep ts)
 	{
+		FT_PROFILE_FUNCTION();
+
 		// FT_INFO("Delta time: {0}s ({1}ms)", ts.GetSeconds(), ts.GetMilliseconds()); 
 		if (Input::IsKeyPressed(FT_KEY_A))
 			m_CameraPosition.x += m_CameraTranslationSpeed * ts;
@@ -41,6 +43,8 @@ namespace Fountain {
 
 	void OrthographicCameraController::OnEvent(Event& e)
 	{
+		FT_PROFILE_FUNCTION();
+
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<MouseScrolledEvent>(FT_BIND_EVENT_FN(OrthographicCameraController::OnMouseScrolled));
 		dispatcher.Dispatch<WindowResizeEvent>(FT_BIND_EVENT_FN(OrthographicCameraController::OnWindowResized));
@@ -48,6 +52,8 @@ namespace Fountain {
 
 	bool OrthographicCameraController::OnMouseScrolled(MouseScrolledEvent& e)
 	{
+		FT_PROFILE_FUNCTION();
+
 		m_ZoomLevel -= e.GetYOffset() * 0.5f;
 		m_ZoomLevel = std::max(m_ZoomLevel, 0.25f);
 		m_Camera.SetProjection(-m_AspectRatio * m_ZoomLevel, m_AspectRatio * m_ZoomLevel, -m_ZoomLevel, m_ZoomLevel);
@@ -56,6 +62,8 @@ namespace Fountain {
 
 	bool OrthographicCameraController::OnWindowResized(WindowResizeEvent& e)
 	{
+		FT_PROFILE_FUNCTION();
+
 		m_AspectRatio = (float)e.GetWidth() / (float)e.GetHeight();
 		m_Camera.SetProjection(-m_AspectRatio * m_ZoomLevel, m_AspectRatio * m_ZoomLevel, -m_ZoomLevel, m_ZoomLevel);
 		return false;

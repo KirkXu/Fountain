@@ -10,7 +10,7 @@ namespace Fountain {
 	class FOUNTAIN_API LayerStack
 	{
 	public:
-		LayerStack();
+		LayerStack() = default;
 		~LayerStack();
 
 		void PushLayer(Layer* layer);

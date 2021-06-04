@@ -28,26 +28,36 @@ namespace Fountain {
 
 	OpenGLVertexArray::OpenGLVertexArray()
 	{
+		FT_PROFILE_FUNCTION();
+
 		glCreateVertexArrays(1, &m_RendererID);
 	}
 
 	OpenGLVertexArray::~OpenGLVertexArray()
 	{
+		FT_PROFILE_FUNCTION();
+
 		glDeleteVertexArrays(1, &m_RendererID);
 	}
 
 	void OpenGLVertexArray::Bind() const
 	{
+		FT_PROFILE_FUNCTION();
+
 		glBindVertexArray(m_RendererID);
 	}
 
 	void OpenGLVertexArray::Unbind() const
 	{
+		FT_PROFILE_FUNCTION();
+
 		glBindVertexArray(0);
 	}
 
 	void OpenGLVertexArray::AddVertexBuffer(const Ref<VertexBuffer>& vertexBuffer)
 	{
+		FT_PROFILE_FUNCTION();
+
 		FT_CORE_ASSERT(vertexBuffer->GetLayout().GetElements().size(), "Vertex Buffer has no layout!");
 
 		glBindVertexArray(m_RendererID);
