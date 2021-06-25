@@ -2,6 +2,8 @@
 
 // For use by Fountain applicatiuons
 
+#include "Fountain/Core/Core.h"
+
 #include "Fountain/Core/Application.h"
 #include "Fountain/Core/Layer.h"
 #include "Fountain/Core/Log.h"

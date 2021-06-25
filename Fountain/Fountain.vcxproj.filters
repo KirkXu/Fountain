@@ -10,6 +10,9 @@
     <Filter Include="src\Fountain\Core">
       <UniqueIdentifier>{1876A465-848C-A2FB-CD03-2E1D39597383}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Fountain\Debug">
+      <UniqueIdentifier>{36943F1A-2278-0070-8BD8-FAC277DBEAF1}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Fountain\Events">
       <UniqueIdentifier>{A46DBC65-10CF-9973-993C-E025059DD032}</UniqueIdentifier>
     </Filter>
@@ -90,6 +93,9 @@
     <ClInclude Include="src\Fountain\Core\Window.h">
       <Filter>src\Fountain\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Fountain\Debug\Instrumentor.h">
+      <Filter>src\Fountain\Debug</Filter>
+    </ClInclude>
     <ClInclude Include="src\Fountain\Events\ApplicationEvent.h">
       <Filter>src\Fountain\Events</Filter>
     </ClInclude>
@@ -121,6 +127,9 @@
       <Filter>src\Fountain\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Fountain\Renderer\Renderer.h">
+      <Filter>src\Fountain\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fountain\Renderer\Renderer2D.h">
       <Filter>src\Fountain\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Fountain\Renderer\RendererAPI.h">
@@ -1404,8 +1413,6 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\Fountain\Renderer\Renderer2D.h" />
-    <ClInclude Include="src\Fountain\Debug\Instrumentor.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Fountain\Core\Application.cpp">
@@ -1439,6 +1446,9 @@
       <Filter>src\Fountain\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Fountain\Renderer\Renderer.cpp">
+      <Filter>src\Fountain\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Fountain\Renderer\Renderer2D.cpp">
       <Filter>src\Fountain\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Fountain\Renderer\RendererAPI.cpp">
@@ -1483,6 +1493,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\Fountain\Renderer\Renderer2D.cpp" />
   </ItemGroup>
 </Project>
