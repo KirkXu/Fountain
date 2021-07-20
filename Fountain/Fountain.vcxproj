@@ -141,7 +141,7 @@
     <ClInclude Include="src\Fountain\Core\Layer.h" />
     <ClInclude Include="src\Fountain\Core\LayerStack.h" />
     <ClInclude Include="src\Fountain\Core\Log.h" />
-    <ClInclude Include="src\Fountain\Core\MouseButtonCodes.h" />
+    <ClInclude Include="src\Fountain\Core\MouseCodes.h" />
     <ClInclude Include="src\Fountain\Core\Timestep.h" />
     <ClInclude Include="src\Fountain\Core\Window.h" />
     <ClInclude Include="src\Fountain\Debug\Instrumentor.h" />
@@ -626,7 +626,10 @@
       <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
-</Project> 
+</Project>

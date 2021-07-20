@@ -84,7 +84,7 @@
     <ClInclude Include="src\Fountain\Core\Log.h">
       <Filter>src\Fountain\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Fountain\Core\MouseButtonCodes.h">
+    <ClInclude Include="src\Fountain\Core\MouseCodes.h">
       <Filter>src\Fountain\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Fountain\Core\Timestep.h">
@@ -1493,5 +1493,8 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

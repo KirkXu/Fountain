@@ -12,7 +12,7 @@
 
 #include "Fountain/Core/Input.h"
 #include "Fountain/Core/KeyCodes.h"
-#include "Fountain/Core/MouseButtonCodes.h"
+#include "Fountain/Core/MouseCodes.h"
 #include "Fountain/Renderer/OrthographicCameraController.h"
 
 #include "Fountain/ImGui/ImGuiLayer.h"

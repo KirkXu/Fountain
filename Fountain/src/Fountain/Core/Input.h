@@ -1,22 +1,29 @@
 #pragma once
 
 #include "Fountain/Core/Core.h"
+#include "Fountain/Core/KeyCodes.h"
+#include "Fountain/Core/MouseCodes.h"
 
 namespace Fountain {
 
-	class FOUNTAIN_API Input
+	class Input
 	{
+	protected:
+		Input() = default;
 	public:
-		inline static bool IsKeyPressed(int keycode) { return s_Instance->IsKeyPressedImpl(keycode); }
+		Input(const Input&) = delete;
+		Input& operator=(const Input&) = delete;
 
-		inline static bool IsMouseButtonPressed(int button) { return s_Instance->IsMouseButtonPressedImpl(button); }
+		inline static bool IsKeyPressed(KeyCode key) { return s_Instance->IsKeyPressedImpl(key); }
+
+		inline static bool IsMouseButtonPressed(MouseCode button) { return s_Instance->IsMouseButtonPressedImpl(button); }
 		inline static std::pair<float, float> GetMousePosition() { return s_Instance->GetMousePositionImpl(); }
 		inline static float IsMouseX() { return s_Instance->IsMouseXImpl(); }
 		inline static float IsMouseY() { return s_Instance->IsMouseYImpl(); }
 	protected:
-		virtual bool IsKeyPressedImpl(int keycode) = 0;
+		virtual bool IsKeyPressedImpl(KeyCode keycode) = 0;
 
-		virtual bool IsMouseButtonPressedImpl(int button) = 0;
+		virtual bool IsMouseButtonPressedImpl(MouseCode button) = 0;
 		virtual std::pair<float, float> GetMousePositionImpl() = 0;
 		virtual float IsMouseXImpl() = 0;
 		virtual float IsMouseYImpl() = 0;
