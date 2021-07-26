@@ -1,12 +1,12 @@
 [submodule "Fountain/vendor/spdlog"]
 	path = Fountain/vendor/spdlog
 	url = https://github.com/gabime/spdlog
-[submodule ".\\Fountain\\vendor\\GLFW"]
-	path = .\\Fountain\\vendor\\GLFW
+[submodule "Fountain/vendor/GLFW"]
+	path = Fountain/vendor/GLFW
 	url = https://github.com/KirkXu/glfw
-[submodule ".\\Fountain\\vendor\\imgui"]
-	path = .\\Fountain\\vendor\\imgui
+[submodule "Fountain/vendor/imgui"]
+	path = Fountain/vendor/imgui
 	url = https://github.com/KirkXu/imgui
-[submodule ".\\Fountain\\vendor\\glm"]
-	path = .\\Fountain\\vendor\\glm
+[submodule "Fountain/vendor/glm"]
+	path = Fountain/vendor/glm
 	url = https://github.com/g-truc/glm
