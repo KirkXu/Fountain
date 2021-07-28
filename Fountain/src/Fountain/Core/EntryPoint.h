@@ -1,4 +1,5 @@
 #pragma once
+#include "Fountain/Core/Base.h"
 
 #ifdef FT_PLATFORM_WINDOWS
 

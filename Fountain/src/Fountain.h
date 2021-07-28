@@ -2,7 +2,7 @@
 
 // For use by Fountain applicatiuons
 
-#include "Fountain/Core/Core.h"
+#include "Fountain/Core/Base.h"
 
 #include "Fountain/Core/Application.h"
 #include "Fountain/Core/Layer.h"

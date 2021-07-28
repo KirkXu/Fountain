@@ -2,7 +2,7 @@
 
 #include "ftpch.h"
 
-#include "Fountain/Core/Core.h"
+#include "Fountain/Core/Base.h"
 #include "Fountain/Events/Event.h"
 
 namespace Fountain {

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Fountain/Core/Core.h"
+#include "Fountain/Core/Base.h"
 #include "Layer.h"
 
 #include <vector>

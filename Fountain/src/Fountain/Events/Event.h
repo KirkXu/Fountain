@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ftpch.h"
-#include "Fountain/Core/Core.h"
+#include "Fountain/Core/Base.h"
 
 namespace Fountain {
 	

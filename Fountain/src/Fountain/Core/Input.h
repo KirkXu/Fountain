@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Fountain/Core/Core.h"
+#include "Fountain/Core/Base.h"
 #include "Fountain/Core/KeyCodes.h"
 #include "Fountain/Core/MouseCodes.h"
 

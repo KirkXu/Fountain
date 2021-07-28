@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Fountain/Core/Core.h"
+#include "Fountain/Core/Base.h"
 #include "Fountain/Core/Timestep.h"
 #include "Fountain/Events/Event.h"
 
