@@ -24,6 +24,7 @@
 
 #include "Fountain/Renderer/Buffer.h"
 #include "Fountain/Renderer/Shader.h"
+#include "Fountain/Renderer/Framebuffer.h"
 #include "Fountain/Renderer/Texture.h"
 #include "Fountain/Renderer/VertexArray.h"
 
