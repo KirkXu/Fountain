@@ -21,7 +21,7 @@ private:
 	// Temp
 	Fountain::Ref<Fountain::VertexArray> m_SquareVA;
 	Fountain::Ref<Fountain::Shader> m_FlatColorShader;
-	Fountain::Ref<Fountain::Framebuffer> m_Framebuffer;
+
 
 	Fountain::Ref<Fountain::Texture2D> m_CloudTexture;
 

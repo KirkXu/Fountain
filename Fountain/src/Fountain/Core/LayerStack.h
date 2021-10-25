@@ -7,7 +7,7 @@
 
 namespace Fountain {
 
-	class FOUNTAIN_API LayerStack
+	class LayerStack
 	{
 	public:
 		LayerStack() = default;

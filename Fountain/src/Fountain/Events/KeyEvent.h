@@ -6,7 +6,7 @@
 
 namespace Fountain {
 
-	class FOUNTAIN_API KeyEvent : public Event
+	class KeyEvent : public Event
 	{
 	public:
 		inline KeyCode GetKeyCode() const { return m_KeyCode; }
@@ -19,7 +19,7 @@ namespace Fountain {
 		KeyCode m_KeyCode;
 	};
 
-	class FOUNTAIN_API KeyPressedEvent : public KeyEvent
+	class KeyPressedEvent : public KeyEvent
 	{
 	public:
 		KeyPressedEvent(KeyCode keycode, int repeatCount)
@@ -40,7 +40,7 @@ namespace Fountain {
 		int m_RepeatCount;
 	};
 
-	class FOUNTAIN_API KeyReleasedEvent : public KeyEvent
+	class KeyReleasedEvent : public KeyEvent
 	{
 	public:
 		KeyReleasedEvent(KeyCode keycode)
@@ -56,7 +56,7 @@ namespace Fountain {
 		EVENT_CLASS_TYPE(KeyReleased)
 	};
 
-	class FOUNTAIN_API KeyTypedEvent : public KeyEvent
+	class KeyTypedEvent : public KeyEvent
 	{
 	public:
 		KeyTypedEvent(KeyCode keycode)

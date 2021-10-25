@@ -6,7 +6,7 @@
 
 namespace Fountain {
 
-	class FOUNTAIN_API MouseMovedEvent : public Event
+	class MouseMovedEvent : public Event
 	{
 	public:
 		MouseMovedEvent(float x, float y)
@@ -28,7 +28,7 @@ namespace Fountain {
 		float m_MouseX, m_MouseY;
 	};
 
-	class FOUNTAIN_API MouseScrolledEvent : public Event
+	class MouseScrolledEvent : public Event
 	{
 	public:
 		MouseScrolledEvent(float xOffset, float yOffset)
@@ -50,7 +50,7 @@ namespace Fountain {
 		float m_XOffset, m_YOffset;
 	};
 
-	class FOUNTAIN_API MouseButtonEvent :public Event
+	class MouseButtonEvent :public Event
 	{
 	public:
 		inline MouseCode GetMouseButton() const { return m_Button; }
@@ -63,7 +63,7 @@ namespace Fountain {
 		MouseCode m_Button;
 	};
 
-	class FOUNTAIN_API MouseButtonPressedEvent : public MouseButtonEvent
+	class MouseButtonPressedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonPressedEvent(MouseCode button)
@@ -79,7 +79,7 @@ namespace Fountain {
 		EVENT_CLASS_TYPE(MouseButtonPressed)
 	};
 
-	class FOUNTAIN_API MouseButtonReleasedEvent : public MouseButtonEvent
+	class MouseButtonReleasedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonReleasedEvent(MouseCode button)

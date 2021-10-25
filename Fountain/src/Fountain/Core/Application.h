@@ -16,7 +16,7 @@ namespace Fountain {
 	class Application
 	{
 	public:
-		Application();
+		Application(const std::string& name = "Fountain App");
 		virtual ~Application();
 
 		void Run();

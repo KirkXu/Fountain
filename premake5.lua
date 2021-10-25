@@ -148,3 +148,50 @@ project "Sandbox"
 		runtime "Release"
 		symbols "on"
 
+
+project "Fountain-Editor"
+	location "Fountain-Editor"
+	kind "ConsoleApp"
+	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
+
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	files
+	{
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp"
+	}
+
+	includedirs
+	{
+		"Fountain/vendor/spdlog/include",
+		"Fountain/src",
+		"Fountain/vendor",
+		"%{IncludeDir.glm}"
+	}
+
+	links
+	{
+		"Fountain"
+	}
+
+	filter "system:windows"
+		    systemversion "latest"
+
+	filter "configurations:Debug"
+		    defines "FT_DEBUG"
+			runtime "Debug"
+			symbols "on"
+
+	filter "configurations:Release"
+			defines "FT_RELEASE"
+			runtime "Release"
+			optimize "on"
+
+	filter "configurations:Dist"
+			defines "FT_DIST"
+			runtime "Release"
+			optimize "on"
