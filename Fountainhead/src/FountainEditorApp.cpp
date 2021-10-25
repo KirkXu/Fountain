@@ -5,23 +5,23 @@
 
 namespace Fountain {
 
-	class FountainEditor : public Application
+	class Fountainhead : public Application
 	{
 	public:
-		FountainEditor()
-			: Application("Fountain Editor")
+		Fountainhead()
+			: Application("Fountainhead")
 		{
 			PushLayer(new EditorLayer());
 		}
 
-		~FountainEditor()
+		~Fountainhead()
 		{
 		}
 	};
 
 	Application* CreateApplication()
 	{
-		return new FountainEditor();
+		return new Fountainhead();
 	}
 
 }

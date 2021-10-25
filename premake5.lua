@@ -1,6 +1,6 @@
 workspace "Fountain"
 	architecture "x64"
-	startproject "Sandbox"
+	startproject "Fountainhead"
 
 	configurations
 	{
@@ -149,8 +149,8 @@ project "Sandbox"
 		symbols "on"
 
 
-project "Fountain-Editor"
-	location "Fountain-Editor"
+project "Fountainhead"
+	location "Fountainhead"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"
