@@ -57,6 +57,7 @@
 #define FT_DEBUGBREAK()
 #endif
 
+// TODO: Make this macro able to take in no arguments except condition
 #ifdef FT_ENABLE_ASSERTS
 #define FT_ASSERT(x, ...) { if(!(x)) { FT_ERROR("Assertion Failed: {0}", __VA_ARGS__); FT_DEBUGBREAK(); } }
 #define FT_CORE_ASSERT(x, ...) { if(!(x)) { FT_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); FT_DEBUGBREAK(); } }

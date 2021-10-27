@@ -9,6 +9,11 @@ workspace "Fountain"
 		"Dist"
 	}
 
+	flags
+	{
+		"MultiProcessorCompile"
+	}
+
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 -- Include directories relative to root folder (solution directory)
@@ -18,10 +23,13 @@ IncludeDir["Glad"] = "Fountain/vendor/Glad/include"
 IncludeDir["ImGui"] = "Fountain/vendor/imgui"
 IncludeDir["glm"] = "Fountain/vendor/glm"
 IncludeDir["stb_image"] = "Fountain/vendor/stb_image"
+IncludeDir["entt"] = "Fountain/vendor/entt/include"
 
-include "Fountain/vendor/GLFW"
-include "Fountain/vendor/Glad"
-include "Fountain/vendor/imgui"
+group "Dependencies"
+	include "Fountain/vendor/GLFW"
+	include "Fountain/vendor/Glad"
+	include "Fountain/vendor/imgui"
+group ""
 
 project "Fountain"
 	location "Fountain"
@@ -48,7 +56,8 @@ project "Fountain"
 
 	defines
 	{
-		"_CRT_SECURE_NO_WARNINGS"
+		"_CRT_SECURE_NO_WARNINGS",
+		"GLFW_INCLUDE_NONE"
 	}
 
 	includedirs
@@ -59,7 +68,8 @@ project "Fountain"
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.glm}",
-		"%{IncludeDir.stb_image}"
+		"%{IncludeDir.stb_image}",
+		"%{IncludeDir.entt}"
 	}
 
 	links 
@@ -75,9 +85,6 @@ project "Fountain"
 
 		defines
 		{
-			"FT_PLATFORM_WINDOWS",
-			"FT_BUILD_DLL",
-			"GLFW_INCLUDE_NONE"
 		}
 
 	filter "configurations:Debug"
@@ -116,7 +123,7 @@ project "Sandbox"
 		"Fountain/vendor/spdlog/include",
 		"Fountain/src",
 		"Fountain/vendor",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
 	}
 
 	links
@@ -126,12 +133,6 @@ project "Sandbox"
 
 	filter "system:windows"
 		systemversion "latest"
-
-		defines
-		{
-			"FT_PLATFORM_WINDOWS",
-		}
-
 	
 	filter "configurations:Debug"
 		defines "FT_DEBUG"
@@ -147,7 +148,6 @@ project "Sandbox"
 		defines "FT_DIST"
 		runtime "Release"
 		symbols "on"
-
 
 project "Fountainhead"
 	location "Fountainhead"
@@ -170,7 +170,8 @@ project "Fountainhead"
 		"Fountain/vendor/spdlog/include",
 		"Fountain/src",
 		"Fountain/vendor",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}"
 	}
 
 	links
