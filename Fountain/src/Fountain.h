@@ -18,6 +18,7 @@
 #include "Fountain/ImGui/ImGuiLayer.h"
 
 #include "Fountain/Scene/Scene.h"
+#include "Fountain/Scene/Entity.h"
 #include "Fountain/Scene/Components.h"
 
 // ---Renderer---------------------------
