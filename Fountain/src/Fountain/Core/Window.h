@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ftpch.h"
+#include <sstream>
 
 #include "Fountain/Core/Base.h"
 #include "Fountain/Events/Event.h"

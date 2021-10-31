@@ -6,6 +6,10 @@
 #include <iomanip>
 #include <string>
 #include <thread>
+#include <mutex>
+#include <sstream>
+
+#include "Fountain/Core/Log.h"
 
 namespace Fountain {
 
@@ -221,10 +225,10 @@ namespace Fountain {
 #define FT_FUNC_SIG "FT_FUNC_SIG unknown!"
 #endif
 
-#define FT_PROFILE_BEGIN_SESSION(name, filepath) ::Hazel::Instrumentor::Get().BeginSession(name, filepath)
-#define FT_PROFILE_END_SESSION() ::Hazel::Instrumentor::Get().EndSession()
-#define FT_PROFILE_SCOPE_LINE2(name, line) constexpr auto fixedName##line = ::Hazel::InstrumentorUtils::CleanupOutputString(name, "__cdecl ");\
-											   ::Hazel::InstrumentationTimer timer##line(fixedName##line.Data)
+#define FT_PROFILE_BEGIN_SESSION(name, filepath) ::Fountain::Instrumentor::Get().BeginSession(name, filepath)
+#define FT_PROFILE_END_SESSION() ::Fountain::Instrumentor::Get().EndSession()
+#define FT_PROFILE_SCOPE_LINE2(name, line) constexpr auto fixedName##line = ::Fountain::InstrumentorUtils::CleanupOutputString(name, "__cdecl ");\
+											   ::Fountain::InstrumentationTimer timer##line(fixedName##line.Data)
 #define FT_PROFILE_SCOPE_LINE(name, line) FT_PROFILE_SCOPE_LINE2(name, line)
 #define FT_PROFILE_SCOPE(name) FT_PROFILE_SCOPE_LINE(name, __LINE__)
 #define FT_PROFILE_FUNCTION() FT_PROFILE_SCOPE(FT_FUNC_SIG)

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Fountain/Events/Event.h"
-#include "Fountain/Core/Input.h"
+#include "Fountain/Core/MouseCodes.h"
 
 
 namespace Fountain {

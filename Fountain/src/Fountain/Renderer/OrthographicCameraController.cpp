@@ -17,21 +17,33 @@ namespace Fountain {
 		FT_PROFILE_FUNCTION();
 
 		// FT_INFO("Delta time: {0}s ({1}ms)", ts.GetSeconds(), ts.GetMilliseconds()); 
-		if (Input::IsKeyPressed(FT_KEY_A))
-			m_CameraPosition.x += m_CameraTranslationSpeed * ts;
-		else if (Fountain::Input::IsKeyPressed(FT_KEY_D))
-			m_CameraPosition.x -= m_CameraTranslationSpeed * ts;
+		if (Input::IsKeyPressed(Key::A))
+		{
+			m_CameraPosition.x -= cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+			m_CameraPosition.y -= sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+		}
+		else if (Fountain::Input::IsKeyPressed(Key::D))
+		{
+			m_CameraPosition.x += cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+			m_CameraPosition.y += sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+		}
 
-		if (Input::IsKeyPressed(FT_KEY_W))
-			m_CameraPosition.y -= m_CameraTranslationSpeed * ts;
-		else if (Input::IsKeyPressed(FT_KEY_S))
-			m_CameraPosition.y += m_CameraTranslationSpeed * ts;
+		if (Input::IsKeyPressed(Key::W))
+		{
+			m_CameraPosition.x += -sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+			m_CameraPosition.y += cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+		}
+		else if (Input::IsKeyPressed(Key::S))
+		{
+			m_CameraPosition.x -= -sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+			m_CameraPosition.y -= cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+		}
 		if (m_Rotation)
 		{
-			if (Input::IsKeyPressed(FT_KEY_Q))
-				m_CameraRotation -= m_CameraRotationSpeed * ts;
-			if (Input::IsKeyPressed(FT_KEY_E))
+			if (Input::IsKeyPressed(Key::Q))
 				m_CameraRotation += m_CameraRotationSpeed * ts;
+			if (Input::IsKeyPressed(Key::E))
+				m_CameraRotation -= m_CameraRotationSpeed * ts;
 
 			m_Camera.SetRotation(m_CameraRotation);
 		}
