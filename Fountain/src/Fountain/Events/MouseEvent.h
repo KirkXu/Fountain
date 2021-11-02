@@ -55,7 +55,7 @@ namespace Fountain {
 	public:
 		inline MouseCode GetMouseButton() const { return m_Button; }
 
-		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
+		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryMouseButton)
 	protected:
 		MouseButtonEvent(MouseCode button)
 			: m_Button(button) {}

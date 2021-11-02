@@ -1,8 +1,12 @@
 #pragma once
 
 #include "Base.h"
+
+// This ignores all warnings raised inside External headers
+#pragma warning(push, 0)
 #include "spdlog/spdlog.h"
 #include "spdlog/fmt/ostr.h"
+#pragma warning(pop)
 
 namespace Fountain {
 
@@ -34,3 +38,4 @@ namespace Fountain {
 #define FT_WARN(...)           ::Fountain::Log::GetClientLogger()->warn(__VA_ARGS__)
 #define FT_ERROR(...)          ::Fountain::Log::GetClientLogger()->error(__VA_ARGS__)
 #define FT_FATAL(...)          ::Fountain::Log::GetClientLogger()->fatal(__VA_ARGS__)
+#define FT_CRITICAL(...)       ::Fountain::Log::GetClientLogger()->critical(__VA_ARGS__)
