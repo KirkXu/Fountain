@@ -46,7 +46,9 @@ namespace Fountain {
 		};
 		static void ResetStats();
 		static Statistics GetStats();
-		static void FlushAndReset();
+	private:
+		static void StartBatch();
+		static void NextBatch();
 	};
 
 }
