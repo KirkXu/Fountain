@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Fountain/Core/Base.h"
-#include "Fountain/Core/Log.h"
+
 #include "Fountain/Scene/Scene.h"
 #include "Fountain/Scene/Entity.h"
 
