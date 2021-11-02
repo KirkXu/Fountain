@@ -19,7 +19,7 @@
 #define FT_DEBUGBREAK()
 #endif
 
-#define FT_EXPAND_MARCO(x) x
+#define FT_EXPAND_MACRO(x) x
 #define FT_STRINGGIFY_MACRO(x) #x
 
 #define BIT(x) (1 << x)
