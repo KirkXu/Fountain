@@ -10,3 +10,6 @@
 [submodule "Fountain/vendor/glm"]
 	path = Fountain/vendor/glm
 	url = https://github.com/g-truc/glm
+[submodule "Fountain/vendor/yaml-cpp"]
+	path = Fountain/vendor/yaml-cpp
+	url = https://github.com.cnpmjs.org/KirkXu/yaml-cpp.git
