@@ -87,7 +87,7 @@ namespace Fountain {
 	static void SerializeEntity(YAML::Emitter& out, Entity entity)
 	{
 		out << YAML::BeginMap; // Entity
-		out << YAML::Key << "Entity" << YAML::Value << "12837192831273"; // TODO: Entity ID goes here
+		out << YAML::Key << "Entity" << YAML::Value << "123456"; // TODO: Entity ID goes here
 
 		if (entity.HasComponent<TagComponent>())
 		{
@@ -176,7 +176,7 @@ namespace Fountain {
 	void SceneSerializer::SerializeRuntime(const std::string& filepath)
 	{
 		// Not implementd
-		//FT_CORE_ASSERT(false);
+		FT_CORE_ASSERT(false);
 	}
 
 	bool SceneSerializer::Deserialize(const std::string& filepath)
@@ -253,7 +253,7 @@ namespace Fountain {
 	bool SceneSerializer::DeserializeRuntime(const std::string& filepath)
 	{
 		// Not implemented
-		//FT_CORE_ASSERT(false);
+		FT_CORE_ASSERT(false);
 		return false;
 	}
 

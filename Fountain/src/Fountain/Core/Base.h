@@ -20,7 +20,7 @@
 #endif
 
 #define FT_EXPAND_MACRO(x) x
-#define FT_STRINGGIFY_MACRO(x) #x
+#define FT_STRINGIFY_MACRO(x) #x
 
 #define BIT(x) (1 << x)
 
