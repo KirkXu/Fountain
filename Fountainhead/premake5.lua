@@ -19,7 +19,8 @@ project "Fountainhead"
 		"%{wks.location}/Fountain/src",
 		"%{wks.location}/Fountain/vendor",
 		"%{IncludeDir.glm}",
-		"%{IncludeDir.entt}"
+		"%{IncludeDir.entt}",
+		"%{IncludeDir.ImGuizmo}"
 	}
 
 	links

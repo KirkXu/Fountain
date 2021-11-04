@@ -13,3 +13,6 @@
 [submodule "Fountain/vendor/yaml-cpp"]
 	path = Fountain/vendor/yaml-cpp
 	url = https://github.com.cnpmjs.org/KirkXu/yaml-cpp.git
+[submodule ".\\Fountain\\vendor\\ImGuizmo"]
+	path = .\\Fountain\\vendor\\ImGuizmo
+	url = https://github.com.cnpmjs.org/KirkXu/ImGuizmo.git

@@ -25,13 +25,14 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
-IncludeDir["GLFW"] = "%{wks.location}/Fountain/vendor/GLFW/include"
-IncludeDir["Glad"] = "%{wks.location}/Fountain/vendor/Glad/include"
-IncludeDir["ImGui"] = "%{wks.location}/Fountain/vendor/imgui"
-IncludeDir["glm"] = "%{wks.location}/Fountain/vendor/glm"
+IncludeDir["GLFW"]      = "%{wks.location}/Fountain/vendor/GLFW/include"
+IncludeDir["Glad"]      = "%{wks.location}/Fountain/vendor/Glad/include"
+IncludeDir["ImGui"]     = "%{wks.location}/Fountain/vendor/imgui"
+IncludeDir["glm"]       = "%{wks.location}/Fountain/vendor/glm"
 IncludeDir["stb_image"] = "%{wks.location}/Fountain/vendor/stb_image"
-IncludeDir["entt"] = "%{wks.location}/Fountain/vendor/entt/include"
-IncludeDir["yaml_cpp"] = "%{wks.location}/Fountain/vendor/yaml-cpp/include"
+IncludeDir["entt"]      = "%{wks.location}/Fountain/vendor/entt/include"
+IncludeDir["yaml_cpp"]  = "%{wks.location}/Fountain/vendor/yaml-cpp/include"
+IncludeDir["ImGuizmo"]  = "%{wks.location}/Fountain/vendor/ImGuizmo"
 
 group "Dependencies"
 	include "vendor/premake"
