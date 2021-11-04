@@ -11,7 +11,7 @@
 
 namespace Fountain {
 
-	std::string FileDialogs::OpenFile(const char* filter)
+	std::optional<std::string> FileDialogs::OpenFile(const char* filter)
 	{
 		OPENFILENAMEA ofn;
 		CHAR szFile[260] = { 0 };
@@ -30,7 +30,7 @@ namespace Fountain {
 		return std::string();
 	}
 
-	std::string FileDialogs::SaveFile(const char* filter)
+	std::optional<std::string> FileDialogs::SaveFile(const char* filter)
 	{
 		OPENFILENAMEA ofn;
 		CHAR szFile[260] = { 0 };
@@ -41,13 +41,14 @@ namespace Fountain {
 		ofn.nMaxFile = sizeof(szFile);
 		ofn.lpstrFilter = filter;
 		ofn.nFilterIndex = 1;
+		ofn.Flags = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST | OFN_NOCHANGEDIR;
+
 		// Sets the default extrension by exttracting it from the filter
 		ofn.lpstrDefExt = strchr(filter, '\0') + 1;
-		ofn.Flags = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST | OFN_NOCHANGEDIR;
 		if (GetSaveFileNameA(&ofn) == TRUE)
 		{
 			return ofn.lpstrFile;
 		}
-		return std::string();
+		return std::nullopt;
 	}
 }
