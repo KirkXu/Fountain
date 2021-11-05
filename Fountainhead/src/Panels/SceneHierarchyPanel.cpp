@@ -236,7 +236,7 @@ namespace Fountain {
 
 			if (ImGui::MenuItem("Sprite Renderer"))
 			{
-				if (m_SelectionContext.HasComponent<SpriteRendererComponent>())
+				if (!m_SelectionContext.HasComponent<SpriteRendererComponent>())
 					m_SelectionContext.AddComponent<SpriteRendererComponent>();
 				else
 					FT_CORE_WARN("This entity already has the Sprite Renderer Component!");
