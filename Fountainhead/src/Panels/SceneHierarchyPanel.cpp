@@ -41,7 +41,7 @@ namespace Fountain {
 		// Right-click on blank space
 		if (ImGui::BeginPopupContextWindow(0, 1, false))
 		{
-			if (ImGui::MenuItem("Create Empth Entity"))
+			if (ImGui::MenuItem("Create Empty Entity"))
 				m_Context->CreateEntity("Empty Entity");
 
 			ImGui::EndPopup();
