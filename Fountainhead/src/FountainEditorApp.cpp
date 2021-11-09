@@ -8,8 +8,8 @@ namespace Fountain {
 	class Fountainhead : public Application
 	{
 	public:
-		Fountainhead()
-			: Application("Fountainhead")
+		Fountainhead(ApplicationCommandLineArgs args)
+			: Application("Fountainhead", args)
 		{
 			PushLayer(new EditorLayer());
 		}
@@ -19,9 +19,9 @@ namespace Fountain {
 		}
 	};
 
-	Application* CreateApplication()
+	Application* CreateApplication(ApplicationCommandLineArgs args)
 	{
-		return new Fountainhead();
+		return new Fountainhead(args);
 	}
 
 }

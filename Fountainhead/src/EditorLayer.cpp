@@ -33,6 +33,14 @@ namespace Fountain {
 
 		m_ActiveScene = CreateRef<Scene>();
 
+		auto commandLineArgs = Application::Get().GetCommandLineArgs();
+		if (commandLineArgs.Count > 1)
+		{
+			auto sceneFilePath = commandLineArgs[1];
+			SceneSerializer serializer(m_ActiveScene);
+			serializer.Deserialize(sceneFilePath);
+		}
+
 		m_EditorCamera = EditorCamera(30.0f, 1.778f, 0.1f, 1000.0f);
 
 #if 0
@@ -398,8 +406,8 @@ namespace Fountain {
 
 	void EditorLayer::OpenScene()
 	{
-		std::optional<std::string> filepath = FileDialogs::OpenFile("Fountain Scene (*.ft)\0*.ft\0");
-		if (filepath)
+		std::string filepath = FileDialogs::OpenFile("Fountain Scene (*.ft)\0*.ft\0");
+		if (!filepath.empty())
 		{
 			m_ActiveScene = CreateRef<Scene>();
 			m_ActiveScene->OnViewportResize((uint32_t)m_ViewportSize.x, (uint32_t)m_ViewportSize.y);
@@ -407,17 +415,17 @@ namespace Fountain {
 			m_SceneHierarchyPanel.SetContext(m_ActiveScene);
 
 			SceneSerializer serializer(m_ActiveScene);
-			serializer.Deserialize(*filepath);
+			serializer.Deserialize(filepath);
 		}
 	}
 
 	void EditorLayer::SaveSceneAs()
 	{
-		std::optional<std::string> filepath = FileDialogs::SaveFile("Fountain Scene (*.ft)\0*.ft\0");
-		if (filepath)
+		std::string filepath = FileDialogs::SaveFile("Fountain Scene (*.ft)\0*.ft\0");
+		if (!filepath.empty())
 		{
 			SceneSerializer serializer(m_ActiveScene);
-			serializer.Serialize(*filepath);
+			serializer.Serialize(filepath);
 		}
 	}
 

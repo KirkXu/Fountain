@@ -14,3 +14,8 @@ bin-int/
 **.vcxproj.filters
 **.vcxproj.user
 Fountain/vendor/yaml-cpp
+
+# Directories
+Fountain/vendor/VulkanSDK
+Fountainhead/assets/cache
+scripts/__pycache__

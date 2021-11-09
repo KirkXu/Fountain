@@ -8,7 +8,7 @@
 class Sandbox : public Fountain::Application
 {
 public:
-	Sandbox()
+	Sandbox(Fountain::ApplicationCommandLineArgs args)
 	{
 		// PushLayer(new ExampleLayer());
 		PushLayer(new Sandbox2D());
@@ -20,7 +20,7 @@ public:
 	}
 };
 
-Fountain::Application* Fountain::CreateApplication()
+Fountain::Application* Fountain::CreateApplication(Fountain::ApplicationCommandLineArgs args)
 {
-	return new Sandbox();
+	return new Sandbox(args);
 }

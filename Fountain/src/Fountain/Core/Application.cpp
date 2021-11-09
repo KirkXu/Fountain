@@ -13,7 +13,8 @@ namespace Fountain {
 	Application* Application::s_Instance = nullptr;
 	
 	
-	Application::Application(const std::string& name)
+	Application::Application(const std::string& name, ApplicationCommandLineArgs args)
+		: m_CommandLineArgs(args)
 	{
 		FT_PROFILE_FUNCTION();
 
