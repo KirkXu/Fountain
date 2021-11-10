@@ -26,6 +26,7 @@ namespace Fountain {
 
 		void NewScene();
 		void OpenScene();
+		void OpenScene(const std::filesystem::path& path);
 		void SaveSceneAs();
 	private:
 		Fountain::OrthographicCameraController m_CameraController;
