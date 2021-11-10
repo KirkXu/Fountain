@@ -2,6 +2,7 @@
 
 #include "Fountain.h"
 #include "Panels/SceneHierarchyPanel.h"
+#include "Panels/ContentBrowserPanel.h"
 
 #include "Fountain/Renderer/EditorCamera.h"
 
@@ -57,6 +58,7 @@ namespace Fountain {
 
 		// Panels
 		SceneHierarchyPanel m_SceneHierarchyPanel;
+		ContentBrowserPanel m_ContentBrowserPanel;
 	};
 
 }
