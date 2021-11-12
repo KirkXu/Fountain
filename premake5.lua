@@ -26,6 +26,7 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 group "Dependencies"
 	include "vendor/premake"
+	include "Fountain/vendor/box2d"
 	include "Fountain/vendor/GLFW"
 	include "Fountain/vendor/Glad"
 	include "Fountain/vendor/imgui"

@@ -33,6 +33,7 @@ project "Fountain"
 	{
 		"src",
 		"vendor/spdlog/include",
+		"%{IncludeDir.box2d}",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
@@ -46,6 +47,7 @@ project "Fountain"
 
 	links
 	{
+		"box2d",
 		"GLFW",
 		"Glad",
 		"ImGui",

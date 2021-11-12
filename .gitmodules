@@ -16,3 +16,6 @@
 [submodule ".\\Fountain\\vendor\\ImGuizmo"]
 	path = .\\Fountain\\vendor\\ImGuizmo
 	url = https://github.com.cnpmjs.org/KirkXu/ImGuizmo.git
+[submodule ".\\Fountain\\vendor\\box2d"]
+	path = .\\Fountain\\vendor\\box2d
+	url = https://github.com.cnpmjs.org/KirkXu/box2d.git
